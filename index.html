@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katharina Campos — Creative Portfolio</title>
+<meta name="description" content="Creative portfolio of Katharina Campos — graphic design, typography, branding, photography and web design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --green:#00e05a; --lime:#c6f531; --ink:#111; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { height:100%; background:var(--ink); color:#fff; font-family:Montserrat, system-ui, sans-serif; }
+  header {
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:14px 20px; background:linear-gradient(90deg,var(--green),var(--lime)); color:var(--ink);
+  }
+  .name { font-weight:700; letter-spacing:.02em; font-size:18px; }
+  .role { font-weight:300; letter-spacing:.3em; font-size:11px; text-transform:uppercase; }
+  nav { display:flex; gap:10px; flex-wrap:wrap; }
+  nav a {
+    color:var(--ink); text-decoration:none; font-size:11px; font-weight:500;
+    letter-spacing:.2em; text-transform:uppercase; padding:8px 12px; border:1px solid var(--ink);
+  }
+  nav a.solid { background:var(--ink); color:#fff; }
+  main { height:calc(100% - 64px); }
+  object, iframe { width:100%; height:100%; border:0; display:block; }
+  .fallback { padding:48px 20px; text-align:center; line-height:1.7; }
+  .fallback a { color:var(--lime); }
+  @media (max-width:640px) {
+    header { flex-direction:column; align-items:flex-start; }
+    main { height:calc(100% - 120px); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="name">Katharina Campos</div>
+    <div class="role">Creative Portfolio</div>
+  </div>
+  <nav>
+    <a href="https://styledial.studio" target="_blank" rel="noopener">styledial.studio ↗</a>
+    <a class="solid" href="KatharinaCampos_Portfolio.pdf" download>Download PDF</a>
+  </nav>
+</header>
+<main>
+  <object data="KatharinaCampos_Portfolio.pdf#view=FitH" type="application/pdf">
+    <div class="fallback">
+      <p>Your browser can't show the PDF inline.</p>
+      <p><a href="KatharinaCampos_Portfolio.pdf">Open the portfolio ↗</a></p>
+    </div>
+  </object>
+</main>
+</body>
+</html>
