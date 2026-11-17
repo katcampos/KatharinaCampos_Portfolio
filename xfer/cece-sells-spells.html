@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cece Sells Spells – Style Dial Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist+Mono:wght@400;500&display=swap">
+<style>:root{color-scheme:dark;--ink:#0b0b0c;--panel:#141415;--panel-2:#1b1b1d;--line:#2a2a2d;--paper:#f0ede7;--mute:#9a968f;
+--green:#5fe08f;--pink:#ee12c1;--violet:#6a5cff;--orange:#ff6a3d;
+--display:"Anybody","Arial Black",Impact,sans-serif;--body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;
+--gutter:clamp(16px,4vw,56px);--max:1240px;--r:28px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--pink);color:#fff}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+.grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.09;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+@media (prefers-reduced-motion:reduce){.grain{animation:none}}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* nav */
+.nav{position:fixed;left:50%;transform:translateX(-50%);top:calc(14px + env(safe-area-inset-top,0px));z-index:50;display:flex;align-items:center;gap:4px;padding:6px 6px 6px 10px;border-radius:999px;
+  background:rgba(20,20,21,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);max-width:calc(100% - 24px)}
+.nav .logo{padding:0 6px 0 0}.nav .logo:hover{background:none}
+.nav img{width:34px;height:auto}
+.nav a{text-decoration:none;font:500 13px/1 var(--body);padding:10px 13px;border-radius:999px;color:var(--mute);transition:color .2s,background .2s;white-space:nowrap}
+.nav a:hover{color:var(--paper);background:var(--panel-2)}
+.nav a.cta{background:var(--paper);color:var(--ink)}
+.nav a.cta:hover{background:var(--c);color:var(--ink)}
+@media (max-width:560px){.hide-s{display:none}}
+
+/* header */
+.band{height:clamp(60px,9vw,120px);background-size:auto 100%;background-repeat:repeat-x;background-position:center;opacity:.9;margin-bottom:-20px}
+.phead{padding-top:clamp(110px,14vw,170px);padding-bottom:clamp(24px,3vw,40px)}
+.kick{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--mute)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 14px var(--c)}
+.ptitle{margin:0;font:900 clamp(44px,11vw,150px)/.84 var(--display);font-stretch:150%;font-variation-settings:"wdth" 150;text-transform:uppercase;letter-spacing:-.02em}
+.ptitle span{display:block;width:max-content;max-width:none;white-space:nowrap}
+.ptitle .l2{color:transparent;-webkit-text-stroke:2px var(--c)}
+.psub{margin:20px 0 0;font:500 clamp(18px,1.8vw,24px)/1.3 var(--body);color:var(--paper);max-width:32ch}
+.psub::before{content:"";display:inline-block;width:28px;height:2px;background:var(--c);vertical-align:middle;margin-right:12px;transform:translateY(-3px)}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(32px,4vw,52px);border-top:1px solid var(--line)}
+.meta div{display:grid;gap:6px;padding:16px 16px 0 0;min-width:0}
+.meta div+div{padding-left:16px;border-left:1px solid var(--line)}
+.meta .mono{color:var(--mute);font-size:11px}
+.meta b{font:600 15px/1.35 var(--body);overflow-wrap:anywhere}
+@media (max-width:700px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}.meta div:nth-child(3){padding-left:0;border-left:0}.meta div:nth-child(n+3){border-top:1px solid var(--line);margin-top:14px}}
+
+/* images */
+.shot{margin:0;position:relative;border-radius:22px;overflow:hidden;background:var(--bg,var(--panel));border:1px solid var(--line)}
+.shot .zoom{all:unset;display:block;cursor:zoom-in;width:100%;height:100%}
+.shot img,.shot video{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.shot.pad img,.shot.pad video{padding:clamp(14px,2.4vw,34px)}
+.shot:hover img{transform:scale(1.02)}
+.shot figcaption{position:absolute;left:12px;bottom:12px;padding:7px 11px;border-radius:999px;background:rgba(11,11,12,.75);backdrop-filter:blur(6px);color:var(--paper);font-size:11px}
+.shot.picked{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 20px 50px -20px var(--c)}
+.shot.picked figcaption{background:var(--c);color:var(--ink)}
+.hero-wrap .shot{border-radius:var(--r)}
+.hero-wrap .shot.contain img{max-height:78vh;width:auto;margin-inline:auto;padding:clamp(20px,4vw,60px)}
+
+/* overview boxes */
+.boxes{display:grid;gap:14px;margin-top:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.boxes.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.boxes.n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.box{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:14px;overflow:hidden;transition:border-color .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.box::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 22%,transparent),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
+.box:hover{border-color:var(--c);transform:translateY(-4px)}
+.box:hover::before{opacity:1}
+.box>*{position:relative}
+.box .idx{color:var(--mute)}
+.box h3{margin:0;font:900 20px/1.05 var(--display);font-stretch:130%;font-variation-settings:"wdth" 130;text-transform:uppercase;color:var(--c)}
+.box p{margin:0;color:#cfcac2}
+.boxes.n1 .box p{font-size:clamp(18px,1.7vw,22px);line-height:1.5;color:var(--paper);max-width:62ch}
+@media (max-width:900px){.boxes{grid-template-columns:1fr}}
+
+/* showcase */
+.showcase{display:grid;gap:14px;margin-top:14px}
+.showcase.g-four{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+.showcase.g-four .shot{display:flex;align-items:center;justify-content:center}
+.showcase.g-four .shot img{aspect-ratio:4/5;object-fit:contain}
+.showcase.g-four .shot:not(.pad) img{object-fit:cover}
+.showcase.g-tech{grid-template-columns:1fr 1fr;align-items:start}
+.showcase.g-tech .shot:first-child{grid-row:span 3}
+.showcase.g-bebe{grid-template-columns:.75fr 1fr;align-items:center}
+@media (max-width:900px){.showcase.g-four{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.showcase.g-tech,.showcase.g-bebe{grid-template-columns:1fr}.showcase.g-tech .shot:first-child{grid-row:auto}}
+.feature-shot{margin-top:14px}
+
+/* final work */
+.finals{display:grid;gap:14px;margin-top:14px}
+.row{display:grid;gap:14px;align-items:start}
+.r1{grid-template-columns:1fr}.r2{grid-template-columns:repeat(2,minmax(0,1fr));align-items:center}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}.r4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.r3,.r4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.r2{grid-template-columns:1fr}}
+.finals .pill{justify-self:start}
+.hero-wrap .shot{display:flex;justify-content:center}
+.hero-wrap .shot .zoom{display:flex;justify-content:center}
+.hero-wrap .shot img{width:auto;max-width:100%;max-height:min(86vh,1100px)}
+.hero-wrap .shot.pad img{padding:clamp(20px,4vw,56px)}
+
+/* process: small and secondary */
+.process{margin-top:clamp(56px,7vw,96px)}
+.plabel{display:flex;align-items:center;gap:16px;margin-bottom:18px;color:var(--c)}
+.plabel .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--c),transparent)}
+.plabel .hint{color:var(--mute);font-size:10px}
+@media (max-width:560px){.plabel .hint{display:none}}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px 10px 16px;display:grid;gap:6px;align-content:start;transition:border-color .3s}
+.pc:hover{border-color:var(--c)}
+.ths{display:grid;gap:4px;height:120px;margin-bottom:6px}
+.ths.n2{grid-template-columns:1fr 1fr}.ths.n3{grid-template-columns:1fr 1fr 1fr}
+.th{margin:0;border-radius:10px;overflow:hidden;background:var(--bg,var(--panel-2));height:120px}
+.th .zoom{all:unset;display:block;cursor:zoom-in;width:100%;height:100%}
+.th img,.th video{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.th.pad img,.th.pad video{object-fit:contain;padding:6px}
+.th:hover img{transform:scale(1.05)}
+.pc .num{color:var(--c);font-size:10px;padding-inline:4px}
+.pc h4{margin:0;padding-inline:4px;font:800 15px/1.1 var(--display);font-stretch:115%;font-variation-settings:"wdth" 115;text-transform:uppercase}
+.pc p{margin:0;padding-inline:4px;font-size:13.5px;line-height:1.45;color:var(--mute)}
+
+.cta-band{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:clamp(40px,6vw,80px);margin-top:-30px}
+.cta-band p{margin:0;font:500 clamp(18px,1.8vw,22px)/1.3 var(--body)}
+.cta-band .pill{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.cta-band .pill:hover{background:var(--c);border-color:var(--c);color:var(--ink)}
+
+/* reveal */
+.boxes,.finals .row,.process{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.in{opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){.boxes,.finals .row,.process{opacity:1;transform:none}}
+
+/* next */
+.next{padding-block:clamp(56px,8vw,110px)}
+.next a{display:grid;grid-template-columns:1fr auto;align-items:end;gap:6px 20px;text-decoration:none;padding:clamp(26px,3.4vw,46px);border-radius:var(--r);border:1px solid var(--line);background:var(--panel);transition:border-color .3s,background .3s}
+.next a .mono{grid-column:1/-1;color:var(--mute)}
+.next .nt{font:900 clamp(34px,7vw,96px)/.9 var(--display);font-stretch:150%;font-variation-settings:"wdth" 150;text-transform:uppercase;white-space:nowrap;width:max-content}
+.next .arrow{font:400 clamp(30px,5vw,64px)/1 var(--body);color:var(--c);transition:transform .35s}
+.next a:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 8%,var(--panel))}
+.next a:hover .arrow{transform:translateX(8px)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{width:56px}
+footer .credit{text-align:right}
+footer .credit b{display:block;color:var(--pink);font:800 14px/1.2 var(--display);font-stretch:125%;font-variation-settings:"wdth" 125;letter-spacing:.02em}
+footer a.top{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:12px 16px}
+footer a.top:hover{border-color:var(--paper)}
+footer a.ig{display:inline-flex;align-items:center;gap:8px;text-transform:none}
+footer a.ig:hover{border-color:var(--pink);color:var(--pink)}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh}
+dialog::backdrop{background:rgba(5,5,6,.9);backdrop-filter:blur(6px)}
+dialog img{max-width:94vw;max-height:88vh;width:auto;height:auto;border-radius:14px}
+dialog{overflow:auto}
+#lbx{all:unset;cursor:pointer;display:block;margin:0 0 10px auto;color:var(--paper);padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.pill{display:inline-block;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:12px 16px}
+.pill:hover{border-color:var(--c);color:var(--c)}
+.r2{align-items:stretch}
+.r2 .shot{height:clamp(300px,38vw,540px)}
+.r2 .shot .zoom{height:100%}
+.r2 .shot img{height:100%;object-fit:cover}
+.r2 .shot.pad img{object-fit:contain}
+@media (max-width:560px){.r2 .shot{height:auto}.r2 .shot img{height:auto}.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.ths,.th{height:96px}}
+/* film */
+.film{display:grid;grid-template-columns:1fr auto;gap:clamp(20px,4vw,56px);align-items:center;margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3.4vw,48px)}
+.film .kick2{display:flex;align-items:center;gap:10px;color:var(--c)}
+.film h2{margin:14px 0 12px;font:900 clamp(28px,3.6vw,52px)/.95 var(--display);font-stretch:130%;font-variation-settings:"wdth" 130;text-transform:uppercase}
+.film p{margin:0 0 20px;color:#cfcac2;max-width:42ch}
+.film .snd{cursor:pointer;background:none;color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.phone{width:clamp(220px,26vw,340px);aspect-ratio:9/16;border-radius:30px;overflow:hidden;border:6px solid #1f1f22;box-shadow:0 30px 70px -30px var(--c),0 0 0 1px var(--line);background:#000}
+.phone video{width:100%;height:100%;object-fit:cover}
+@media (max-width:700px){.film{grid-template-columns:1fr}.phone{width:min(100%,320px);margin-inline:auto}}
+/* video hero */
+.vhero{position:relative;margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#000;display:flex;justify-content:center;padding:clamp(16px,2.4vw,32px) 0 clamp(60px,6vw,76px)}
+.vhero .bgv{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;filter:blur(40px) saturate(1.3) brightness(.55)}
+.vhero .fgv{position:relative;height:min(78vh,900px);aspect-ratio:9/16;width:auto;max-width:100%;border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.vhero figcaption{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-inline:clamp(16px,2.4vw,28px);flex-wrap:wrap}
+.vhero figcaption .mono{color:var(--paper);background:rgba(11,11,12,.6);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.vhero .snd{cursor:pointer;background:var(--paper);color:var(--ink);border-color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.sideimg{width:clamp(240px,30vw,400px);border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.sideimg .zoom{all:unset;display:block;cursor:zoom-in}
+.sideimg img{width:100%;height:auto;display:block}
+@media (max-width:700px){.sideimg{width:100%}.vhero .fgv{height:auto;width:min(100%,360px)}}
+/* tetris: video + photos, everything fills its frame */
+.tetris{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px}
+.tetris .vhero{grid-column:span 4;grid-row:span 2;padding:0;display:block;border-radius:22px;background:#000;border:0}
+.tetris .vhero .fgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none;aspect-ratio:auto}
+.tetris .vhero figcaption{bottom:12px;padding-inline:12px}
+.tetris .vhero figcaption .mono{font-size:10px;max-width:60%}
+.tetris .tt{grid-column:span 2;margin:0;border-radius:16px;overflow:hidden;aspect-ratio:2/3;background:var(--panel)}
+.tetris .tt .zoom{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.tetris .tt img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tetris .tt:hover img{transform:scale(1.04)}
+@media (max-width:900px){.tetris{grid-template-columns:repeat(4,minmax(0,1fr))}.tetris .vhero{grid-column:span 4;grid-row:auto;aspect-ratio:9/14}.tetris .tt{grid-column:span 2}}
+
+/* cece sells spells */
+.vwide{position:relative;margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#0c0a06}
+.vwide .bar{display:flex;align-items:center;gap:7px;height:40px;padding:0 16px;background:#16150e;border-bottom:1px solid var(--line)}
+.vwide .bar i{width:10px;height:10px;border-radius:50%;background:#3a3a30}
+.vwide .bar .url{margin-left:14px;padding:5px 14px;border-radius:999px;background:#0c0a06;color:var(--mute)}
+.vwide video{width:100%;height:auto}
+.scrollpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.33fr);gap:14px;align-items:center}
+.scrollpair .phone{width:100%;height:auto;aspect-ratio:9/16;border-width:5px;border-radius:26px}
+@media (max-width:900px){.scrollpair{grid-template-columns:1fr}.scrollpair .phone{width:min(100%,320px);height:auto;margin-inline:auto}}
+.sec{margin-top:clamp(56px,7vw,96px)}
+.spreads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+@media (max-width:700px){.spreads{grid-template-columns:1fr}}
+.ix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
+.ix figure{margin:0;display:grid;gap:12px;align-content:start}
+.ix .phone{width:100%;border-width:5px;border-radius:24px}
+.ix figcaption{display:grid;gap:4px;padding-inline:4px}
+.ix figcaption b{font:800 15px/1.1 var(--display);font-stretch:115%;font-variation-settings:"wdth" 115;text-transform:uppercase;color:var(--c)}
+.ix figcaption span{font-size:13.5px;line-height:1.45;color:var(--mute)}
+@media (max-width:900px){.ix{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sec,.spreads,.ix{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion:reduce){.sec,.spreads,.ix{opacity:1;transform:none}}
+
+.sec{margin-top:clamp(90px,11vw,160px)}
+.stitle{margin:0 0 clamp(20px,2.4vw,30px);font:900 clamp(28px,3.6vw,52px)/.95 var(--display);font-stretch:130%;font-variation-settings:"wdth" 130;text-transform:uppercase}
+.slead{margin:-8px 0 clamp(26px,3vw,40px);color:#cfcac2;max-width:52ch;font-size:clamp(16px,1.4vw,19px)}
+.solo-phone{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(30px,6vw,110px);align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(28px,5vw,80px)}
+.solo-phone .phone{width:clamp(240px,26vw,360px)}
+.spreads{gap:clamp(18px,2.6vw,36px)}
+.ixrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,110px);align-items:center;padding-block:clamp(40px,6vw,90px);border-top:1px solid var(--line)}
+.ixrow:last-child{border-bottom:1px solid var(--line)}
+.ixrow .phone{width:clamp(230px,24vw,330px);justify-self:center}
+.ixrow.flip .phone{order:2}
+.ixrow .num{color:var(--c)}
+.ixrow h3{margin:14px 0 14px;font:900 clamp(28px,3.4vw,48px)/.95 var(--display);font-stretch:130%;font-variation-settings:"wdth" 130;text-transform:uppercase}
+.ixrow p{margin:0;color:#cfcac2;max-width:40ch;font-size:clamp(16px,1.4vw,19px)}
+@media (max-width:760px){.solo-phone,.ixrow{grid-template-columns:1fr}.ixrow.flip .phone{order:0}.solo-phone .phone,.ixrow .phone{justify-self:center}}
+.sec,.spreads,.ixrow{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion:reduce){.sec,.spreads,.ixrow{opacity:1;transform:none}}
+
+.stripwrap{display:grid;gap:clamp(40px,5vw,70px)}
+.strips{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,2.6vw,36px)}
+.strips .cols{display:flex;gap:clamp(8px,1vw,14px);align-items:flex-start}
+.strips .zoom{all:unset;flex:1 1 0;min-width:0;cursor:zoom-in;display:block}
+.strips img{width:100%;height:auto;display:block;border-radius:4px}
+.strip-mobile .cols{gap:clamp(6px,.8vw,12px)}
+.strip-mobile img{border-radius:10px}
+.strips figcaption{margin-top:16px;color:var(--mute);font-size:11px}
+@media (max-width:700px){.strip-mobile .cols{flex-wrap:wrap}.strip-mobile .zoom{flex:0 0 calc(25% - 6px)}}
+.stripwrap{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+</style></head>
+<body style="--c:#e0412f">
+<div class="grain" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="./" aria-label="Style Dial home"><img src="assets/logo_sd.webp" alt=""></a>
+  <a href="./#portfolio">← all work</a>
+  <a href="/brazilian-spot" class="hide-s">next: the brazilian spot</a>
+  <a href="./#contact" class="cta">contact</a>
+</nav>
+<main id="top">
+<header class="wrap phead">
+  <p class="kick mono"><span class="dot"></span>Web design · Identity · Photography</p>
+  <h1 class="ptitle"><span class="l1">Cece Sells</span><span class="l2">Spells</span></h1>
+  <p class="psub">Spiritual healer in the East Bay</p>
+  <div class="meta"><div><span class="mono">Year</span><b>2026</b></div><div><span class="mono">Client</span><b>Cecilia H. Cardoza</b></div><div><span class="mono">Role</span><b>Direction, photography, UX/UI, code</b></div><div><span class="mono">Built with</span><b>HTML, CSS, JS, Photoshop</b></div></div>
+</header>
+
+<section class="wrap boxes" aria-label="Brief"><article class="box"><span class="mono idx">01</span><h3>The brief</h3><p>Cece is a curandera offering tarot, limpias and family care planning. She needed a site that feels true to her practice, not a pastel wellness template, and still makes booking easy.</p></article><article class="box"><span class="mono idx">02</span><h3>What I did</h3><p>Photographed Cece, built the palette and identity from those photos, then designed and coded the site around them.</p></article><article class="box"><span class="mono idx">03</span><h3>The result</h3><p>A dark, reverent site with small rituals built into the experience, from a card of the day to booking steps lit drop by drop.</p></article></section>
+
+<section class="wrap sec" aria-label="Desktop">
+  <h2 class="stitle">The full site</h2>
+  <figure class="vwide"><div class="bar"><i></i><i></i><i></i><span class="url mono">cecesellsspells.netlify.app</span></div><video src="assets/case/cece/scroll-desktop.mp4" poster="assets/case/cece/scroll-desktop.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Scrolling through the full desktop site"></video></figure>
+</section>
+
+<section class="wrap sec" aria-label="Full page">
+  <h2 class="stitle">Every section</h2>
+  <p class="slead">The whole page, desktop and mobile. Click any strip to enlarge.</p>
+  <div class="stripwrap">
+<figure class="strips strip-desktop"><div class="cols"><button type="button" class="zoom" aria-label="Enlarge part 1"><img src="assets/case/cece/strip-desktop-1.webp" alt="Desktop page, part 1 of 4" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 2"><img src="assets/case/cece/strip-desktop-2.webp" alt="Desktop page, part 2 of 4" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 3"><img src="assets/case/cece/strip-desktop-3.webp" alt="Desktop page, part 3 of 4" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 4"><img src="assets/case/cece/strip-desktop-4.webp" alt="Desktop page, part 4 of 4" loading="lazy"></button></div><figcaption class="mono">Desktop · full page, top to bottom, left to right</figcaption></figure>
+<figure class="strips strip-mobile"><div class="cols"><button type="button" class="zoom" aria-label="Enlarge part 1"><img src="assets/case/cece/strip-mobile-1.webp" alt="Mobile page, part 1 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 2"><img src="assets/case/cece/strip-mobile-2.webp" alt="Mobile page, part 2 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 3"><img src="assets/case/cece/strip-mobile-3.webp" alt="Mobile page, part 3 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 4"><img src="assets/case/cece/strip-mobile-4.webp" alt="Mobile page, part 4 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 5"><img src="assets/case/cece/strip-mobile-5.webp" alt="Mobile page, part 5 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 6"><img src="assets/case/cece/strip-mobile-6.webp" alt="Mobile page, part 6 of 7" loading="lazy"></button><button type="button" class="zoom" aria-label="Enlarge part 7"><img src="assets/case/cece/strip-mobile-7.webp" alt="Mobile page, part 7 of 7" loading="lazy"></button></div><figcaption class="mono">Mobile · full page, top to bottom, left to right</figcaption></figure>
+</div>
+</section>
+
+<section class="wrap sec" aria-label="Interactions">
+  <h2 class="stitle">Interactions</h2>
+  <p class="slead">Small rituals built into the page. Recorded on a phone.</p>
+  <div class="ixlist">
+<article class="ixrow"><div class="phone"><video src="assets/case/cece/booking-drip.mp4" poster="assets/case/cece/booking-drip.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Booking, drop by drop"></video></div><div><span class="mono num">01 / 07</span><h3>Booking, drop by drop</h3><p>A gold drop falls through the five booking steps as you scroll, lighting each step it passes, so visitors always see where they are.</p></div></article>
+<article class="ixrow flip"><div class="phone"><video src="assets/case/cece/veil-lifts.mp4" poster="assets/case/cece/veil-lifts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The veil lifts"></video></div><div><span class="mono num">02 / 07</span><h3>The veil lifts</h3><p>Her opening quote starts blurred, as if behind the veil, and clears word by word. The key words settle into gold.</p></div></article>
+<article class="ixrow"><div class="phone"><video src="assets/case/cece/card-of-the-day.mp4" poster="assets/case/cece/card-of-the-day.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A card for today"></video></div><div><span class="mono num">03 / 07</span><h3>A card for today</h3><p>Tap the deck to draw a card. Sixteen short messages, with a link to book a full reading right under it.</p></div></article>
+<article class="ixrow flip"><div class="phone"><video src="assets/case/cece/sage-smoke.mp4" poster="assets/case/cece/sage-smoke.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sage smoke"></video></div><div><span class="mono num">04 / 07</span><h3>Sage smoke</h3><p>Smoke drifts up from the sage bundle and past the arched frame, a quiet moment beside her words.</p></div></article>
+<article class="ixrow"><div class="phone"><video src="assets/case/cece/candle-intentions.mp4" poster="assets/case/cece/candle-intentions.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Candle intentions"></video></div><div><span class="mono num">05 / 07</span><h3>Candle intentions</h3><p>Pick one of four intentions and the candle card takes on its color, with a line on what it is for.</p></div></article>
+<article class="ixrow flip"><div class="phone"><video src="assets/case/cece/quiz.mp4" poster="assets/case/cece/quiz.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Where to start"></video></div><div><span class="mono num">06 / 07</span><h3>Where to start</h3><p>Three quick questions point to the right service, then pre-fill the contact form with it.</p></div></article>
+<article class="ixrow"><div class="phone"><video src="assets/case/cece/hella-healed.mp4" poster="assets/case/cece/hella-healed.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Hella Healed"></video></div><div><span class="mono num">07 / 07</span><h3>Hella Healed</h3><p>The motto burns in, left to right, as the page closes.</p></div></article>
+  </div>
+</section>
+
+<section class="wrap sec" aria-label="Mobile">
+  <div class="solo-phone">
+    <div><span class="mono" style="color:var(--c)">Mobile</span><h2 class="stitle" style="margin-top:14px">Built for the phone</h2><p class="slead" style="margin:0">Every section was laid out for the phone first: text before image, nothing to pinch or zoom.</p></div>
+    <div class="phone"><video src="assets/case/cece/scroll-mobile.mp4" poster="assets/case/cece/scroll-mobile.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Scrolling through the full mobile site"></video></div>
+  </div>
+  <p style="margin-top:40px"><a class="pill mono" href="https://cecesellsspells.netlify.app" target="_blank" rel="noopener">Visit the live site ↗</a></p>
+</section>
+
+<section class="wrap next">
+  <a href="/brazilian-spot" style="--c:var(--green)">
+    <span class="mono">Next project</span>
+    <span class="nt">The Brazilian Spot</span>
+    <span class="arrow" aria-hidden="true">→</span>
+  </a>
+</section>
+<section class="wrap cta-band"><p>Have a brand that needs this kind of care?</p><a class="pill mono" href="./#contact">Let’s work together →</a></section>
+</main>
+<footer><div class="wrap">
+  <a href="./"><img src="assets/logo_sd.webp" alt="Style Dial home"></a>
+  <a class="top mono ig" href="https://www.instagram.com/styledial.studio/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@styledial.studio</a>
+  <a class="top mono" href="#top">Back to top ↑</a>
+  <div class="credit mono">Website designed by <b>Katharina Campos</b></div>
+</div></footer>
+<dialog id="lb" aria-label="Image viewer"><button type="button" id="lbx" class="mono">close ✕</button><img id="lbi" alt=""></dialog>
+<script>
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
+document.querySelectorAll('.zoom').forEach(b=>b.onclick=()=>{const i=b.querySelector('img');lbi.src=i.src;lbi.alt=i.alt;lb.showModal()});
+document.getElementById('lbx').onclick=()=>lb.close();lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+document.querySelectorAll('.box').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+function fit(){document.querySelectorAll('.ptitle span,.next .nt').forEach(el=>{el.style.fontSize='';let f=parseFloat(getComputedStyle(el).fontSize);const avail=el.parentElement.clientWidth-(el.classList.contains('nt')?90:0);let n=0;while(el.scrollWidth>avail&&n++<40){f*=.95;el.style.fontSize=f+'px'}})}
+(document.fonts?document.fonts.ready:Promise.resolve()).then(fit);addEventListener('resize',fit);
+document.querySelectorAll('.snd').forEach(b=>b.onclick=()=>{const f=b.closest('.vhero');const v=f.querySelector('.fgv');v.muted=!v.muted;if(!v.muted)v.play();b.setAttribute('aria-pressed',String(!v.muted));b.textContent=v.muted?'Sound on ♪':'Sound off'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.boxes,.finals .row,.process,.sec,.spreads,.ixrow,.stripwrap').forEach(el=>io.observe(el));
+document.querySelectorAll('.ixrow video').forEach(v=>{const s=()=>{v.playbackRate=.8};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s)});
+</script>
+</body></html>
