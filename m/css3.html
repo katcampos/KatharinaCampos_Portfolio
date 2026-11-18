@@ -21,7 +21,8 @@
 .mc-seq figcaption{margin-top:8px;font-size:11px;color:var(--mute);letter-spacing:.08em;min-height:1.2em}
 .mc-seq figure:nth-child(2n) figcaption{visibility:hidden}
 .mc-ar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
-.mc-ar .mc-lead{display:block;margin:0}
+.mc-ar .mc-lead{display:block;margin:0;min-width:0}
+.mc-ar .mc-lead h2{font-size:clamp(26px,3.2vw,42px);overflow-wrap:break-word}
 .mc-ar .mc-lead p{margin-top:16px}
 .mc-steps{border-top:1px solid var(--line)}
 .mc-step{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.9fr);gap:clamp(16px,3vw,40px);padding:clamp(28px,3.5vw,44px) 0;border-bottom:1px solid var(--line);align-items:start}

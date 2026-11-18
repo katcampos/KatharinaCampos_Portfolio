@@ -3,7 +3,7 @@
 [['.nav a[href="./#portfolio"]','← todos os trabalhos'],['.nav .hide-s','próximo: meditation river'],['.nav .cta','contato'],['.next .mono','Próximo projeto'],['footer a.top[href="#top"]','Voltar ao topo ↑'],['footer .credit','Site criado por <b>Katharina Campos</b>']].forEach(([q,pt])=>{const e=document.querySelector(q);if(e){e.dataset.pt=pt;els.push(e)}});
 els.forEach(e=>e.dataset.en=e.innerHTML);
 const b=document.getElementById('lang');if(!b)return;
-function set(l){els.forEach(e=>e.innerHTML=l==='pt'?e.dataset.pt:e.dataset.en);document.documentElement.lang=l==='pt'?'pt-BR':'en';b.textContent=l==='pt'?'EN':'PT';b.setAttribute('aria-label',l==='pt'?'Switch to English':'Ver em português');try{localStorage.setItem('sd-lang',l)}catch(e){}if(typeof fit==='function')fit()}
+function set(l){els.forEach(e=>e.innerHTML=l==='pt'?e.dataset.pt:e.dataset.en);document.documentElement.lang=l==='pt'?'pt-BR':'en';b.textContent=l==='pt'?'EN':'PT';b.setAttribute('aria-label',l==='pt'?'Switch to English':'Ver em português');document.querySelectorAll('.mc-ar .pill').forEach(p=>{const v=p.closest('.mc-ar').querySelector('video');p.textContent=v.muted?(l==='pt'?'Ativar som ♪':'Sound on ♪'):(l==='pt'?'Desativar som':'Sound off')});try{localStorage.setItem('sd-lang',l)}catch(e){}if(typeof fit==='function')fit()}
 b.onclick=()=>set(document.documentElement.lang==='pt-BR'?'en':'pt');
 let s='en';try{s=localStorage.getItem('sd-lang')||'en'}catch(e){}if(s==='pt')set('pt');})();
 </script>
