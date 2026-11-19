@@ -1,7 +1,7 @@
 <main id="top">
 <style>
 main#top p,main#top h1,main#top h2,main#top h3,main#top h4{text-wrap:pretty}
-main#top b.hl{color:var(--paper);font-weight:600;background:linear-gradient(transparent 60%,rgba(156,197,138,.38) 60%);padding:0 .08em}
+body main#top b.hl{color:var(--paper);font-weight:600;background:linear-gradient(transparent 60%,rgba(156,197,138,.4) 60%)!important;padding:0 .08em}
 .hero-wrap .hero img{width:100%!important;height:auto!important;aspect-ratio:16/9;object-fit:cover!important;object-position:50% 50%!important;padding:0!important}
 .tk-fig{margin:0}
 .tk-fig .zoom{all:unset;display:block;cursor:zoom-in;border-radius:18px;overflow:hidden;background:var(--panel)}
@@ -32,7 +32,8 @@ main#top b.hl{color:var(--paper);font-weight:600;background:linear-gradient(tran
 .tk-quote span{display:block;margin-top:16px;font-size:11px;color:var(--c);letter-spacing:.12em}
 .tk-step img{display:block;width:100%;height:auto;border-radius:12px}
 .tk-step .zoom{all:unset;display:block;cursor:zoom-in;border-radius:12px;overflow:hidden}
-@media (max-width:860px){.tk-row{grid-template-columns:1fr}.tk-g4{grid-template-columns:repeat(2,minmax(0,1fr))}.tk-g3{grid-template-columns:1fr 1fr}.tk-step-img{grid-column:1/-1}}
+@media (max-width:860px){.tk-row{grid-template-columns:1fr}.tk-g4{grid-template-columns:repeat(2,minmax(0,1fr))}.tk-step-img{grid-column:1/-1}}
+@media (max-width:560px){.tk-g3{gap:8px}.tk-g3 .tk-fig figcaption{font-size:10px}}
 @media (max-width:560px){.tk-g2{grid-template-columns:1fr}}
 </style>
 <header class="wrap phead">
